@@ -2,12 +2,15 @@
 
 ## Steps to reproduce
 
-1. Run `git clone https://github.com/KevSlashNull/wrangler-lingering-bug-demo`
-2. Run `cd wrangler-lingering-bug-demo`
-3. Run `npm install`
-4. Run `npx wrangler dev`
+1. Run `pgrep workerd | wc -l` and note the number of `workerd` processes
+2. Run `git clone https://github.com/KevSlashNull/wrangler-lingering-bug-demo`
+3. Run `cd wrangler-lingering-bug-demo`
+4. Run `npm install`
+5. Run `npx wrangler dev`
+6. See an error like `MiniflareCoreError [ERR_RUNTIME_FAILURE]: The Workers runtime failed to start. There is likely additional logging output above.`
+7. Run `pgrep workerd | wc -l` again and see that the number of processes increased by one!
 
-See an error like:
+## Error message
 
 ```
 /private/tmp/wrangler-lingering-bug-demo/node_modules/wrangler/wrangler-dist/cli.js:29768

@@ -1,0 +1,11 @@
+name = "http-router"
+main = "index.ts"
+compatibility_date = "2024-08-16"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+vars = { }
+
+[dev]
+ip = "localhost"
+port = 80
+
